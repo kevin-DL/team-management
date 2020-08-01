@@ -56,6 +56,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/auth'
   ],
   /*
   ** Axios module configuration
@@ -67,5 +68,17 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  router: {
+    middleware: ['auth']
+  },
+  auth: {
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.NUXT_ENV_AUTH0_DOMAIN,
+        client_id: process.env.NUXT_ENV_AUTH0_CLIENT_ID,
+      }
+    }
   }
 }
