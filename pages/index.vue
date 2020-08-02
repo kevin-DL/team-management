@@ -1,4 +1,9 @@
 <template>
+  <div class="h-screen w-screen bg-primary">
+    <div class="w-full md:w-1/2 bg-secondary ">
+
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
